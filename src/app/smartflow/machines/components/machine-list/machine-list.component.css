@@ -1,0 +1,39 @@
+.machine-list {
+  padding: 20px;
+}
+
+.machine-list h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.company-selector {
+  margin-bottom: 20px;
+}
+
+.company-selector select {
+  padding: 5px;
+  font-size: 16px;
+}
+
+.loading, .error, .no-machines {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.error {
+  color: red;
+}
+
+.machine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 600px) {
+  .machine-grid {
+    grid-template-columns: 1fr;
+  }
+}

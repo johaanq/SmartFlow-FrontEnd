@@ -1,0 +1,254 @@
+{
+  "users": [
+    {
+      "id_user": 1,
+      "username": "john_doe",
+      "password": "hashed_password1",
+      "id_subscription": 1
+    },
+    {
+      "id_user": 2,
+      "username": "jane_doe",
+      "password": "hashed_password2",
+      "id_subscription": 2
+    },
+    {
+      "id_user": 3,
+      "username": "bob_smith",
+      "password": "hashed_password3",
+      "id_subscription": 1
+    }
+  ],
+  "company": [
+    {
+      "id_company": 1,
+      "name": "Tech Corp",
+      "phone": "555-0001",
+      "industry": "Manufacturing",
+      "location": "New York",
+      "email": "info@techcorp.com",
+      "id_user": 1,
+      "total_consumption": 13670,
+      "total_cost": 22306,
+      "efficiency": 61.28,
+      "alerts": 2,
+      "consumption_history": [
+        {
+          "date": "2024-09-24",
+          "consumption": 500.0,
+          "cost": 1500.5
+        },
+        {
+          "date": "2024-09-25",
+          "consumption": 800.0,
+          "cost": 2400.0
+        }
+      ]
+    },
+    {
+      "id_company": 2,
+      "name": "Green Energy",
+      "phone": "555-0002",
+      "industry": "Energy",
+      "location": "San Francisco",
+      "email": "info@greenenergy.com",
+      "id_user": 2,
+      "total_consumption": 10500,
+      "total_cost": 18000,
+      "efficiency": 58.33,
+      "alerts": 1,
+      "consumption_history": [
+        {
+          "date": "2024-09-24",
+          "consumption": 450.0,
+          "cost": 1350.0
+        },
+        {
+          "date": "2024-09-25",
+          "consumption": 750.0,
+          "cost": 2250.0
+        }
+      ]
+    },
+    {
+      "id_company": 3,
+      "name": "Innovate Solutions",
+      "phone": "555-0003",
+      "industry": "Technology",
+      "location": "Austin",
+      "email": "info@innovatesolutions.com",
+      "id_user": 3,
+      "total_consumption": 8900,
+      "total_cost": 15000,
+      "efficiency": 59.33,
+      "alerts": 0,
+      "consumption_history": [
+        {
+          "date": "2024-09-24",
+          "consumption": 400.0,
+          "cost": 1200.0
+        },
+        {
+          "date": "2024-09-25",
+          "consumption": 650.0,
+          "cost": 1950.0
+        }
+      ]
+    }
+  ],
+  "machines": [
+    {
+      "id_machine": 1,
+      "type": "Sewing Machine",
+      "status": "Active",
+      "name": "SewMaster-3000",
+      "serial_number": "SM-001",
+      "operational_hours": 1200.5,
+      "location": "Sewing Department",
+      "id_company": 1,
+      "consumption": 4000,
+      "cost": 2500
+    },
+    {
+      "id_machine": 2,
+      "type": "Overlock Machine",
+      "status": "Maintenance",
+      "name": "OverPro-450",
+      "serial_number": "OVR-002",
+      "operational_hours": 850.3,
+      "location": "Edge Stitching",
+      "id_company": 2,
+      "consumption": 3000,
+      "cost": 1500
+    },
+    {
+      "id_machine": 3,
+      "type": "Buttonholing Machine",
+      "status": "Active",
+      "name": "ButtonMaster-XL",
+      "serial_number": "BTN-003",
+      "operational_hours": 3000,
+      "location": "Button Department",
+      "id_company": 1,
+      "consumption": 2000,
+      "cost": 9800
+    },
+    {
+      "id_machine": 4,
+      "type": "Bar Tack Machine",
+      "status": "Idle",
+      "name": "TackFast-100",
+      "serial_number": "TCK-004",
+      "operational_hours": 450.2,
+      "location": "Reinforcement Area",
+      "id_company": 3,
+      "consumption": 2800,
+      "cost": 3900
+    },
+    {
+      "id_machine": 5,
+      "type": "Rivet Machine",
+      "status": "Active",
+      "name": "RivetPro-200",
+      "serial_number": "RVT-005",
+      "operational_hours": 600.4,
+      "location": "Rivet Station",
+      "id_company": 2,
+      "consumption": 1900,
+      "cost": 4700
+    }
+  ],
+  "workers": [
+    {
+      "id_worker": 1,
+      "name": "John Smith",
+      "occupation": "Operator",
+      "phone": "555-1234",
+      "correo": "john.smith@example.com",
+      "id_company": 1,
+      "consumption": 500,
+      "cost": 1500
+    },
+    {
+      "id_worker": 2,
+      "name": "Sara Lee",
+      "occupation": "Technician",
+      "phone": "555-5678",
+      "correo": "sara.lee@example.com",
+      "id_company": 2,
+      "consumption": 450,
+      "cost": 1350
+    },
+    {
+      "id_worker": 3,
+      "name": "Mike Johnson",
+      "occupation": "Engineer",
+      "phone": "555-9012",
+      "correo": "mike.johnson@example.com",
+      "id_company": 3,
+      "consumption": 400,
+      "cost": 1200
+    },
+    {
+      "id_worker": 4,
+      "name": "Alice Brown",
+      "occupation": "Supervisor",
+      "phone": "555-3456",
+      "correo": "alice.brown@example.com",
+      "id_company": 3,
+      "consumption": 350,
+      "cost": 1050
+    },
+    {
+      "id_worker": 5,
+      "name": "WAAA1",
+      "occupation": "administra tu qlo",
+      "phone": "555-3456",
+      "correo": "waaa1@example.com",
+      "id_company": 3,
+      "consumption": 200,
+      "cost": 2383
+    }
+
+  ],
+  "shifts": [
+    {
+      "id_shift": 1,
+      "shift_name": "Morning Shift",
+      "shift_status": "Completed",
+      "operator_comment": "All tasks completed",
+      "production": 100,
+      "date": "2024-09-25",
+      "start_time": "08:00:00",
+      "end_time": "16:00:00",
+      "id_machine": 1,
+      "id_worker": 1
+    },
+    {
+      "id_shift": 2,
+      "shift_name": "Night Shift",
+      "shift_status": "Ongoing",
+      "operator_comment": "Minor issues with machine",
+      "production": 80,
+      "date": "2024-09-25",
+      "start_time": "22:00:00",
+      "end_time": "06:00:00",
+      "id_machine": 2,
+      "id_worker": 2
+    }
+  ],
+  "subscription_plans": [
+    {
+      "id_subscription": 1,
+      "price": 100.0,
+      "type_plan": "basic",
+      "description": "Basic subscription plan"
+    },
+    {
+      "id_subscription": 2,
+      "price": 200.0,
+      "type_plan": "premium",
+      "description": "Premium subscription plan"
+    }
+  ]
+}

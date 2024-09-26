@@ -1,0 +1,119 @@
+<div class="flex-col min-h-screen">
+  <main class="flex-1 p-4 lg:p-6">
+    <div class="tabs space-y-4">
+      <div class="tabs-list">
+        <button mat-button class="tab active" data-tab="overview">Resumen</button>
+        <button mat-button class="tab" data-tab="consumption">Consumo</button>
+        <button mat-button class="tab" data-tab="costs">Costos</button>
+      </div>
+      <div id="overview" class="tab-content active space-y-4">
+        <div class="dashboard-container">
+          <div class="company-selection">
+            <label for="company-select">Select Company:</label>
+            <mat-form-field appearance="fill">
+              <mat-label>Company</mat-label>
+              <mat-select id="company-select" (selectionChange)="selectCompany($event)">
+                <mat-option *ngFor="let company of companies" [value]="company.id_company">
+                  {{ company.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div *ngIf="selectedCompany" class="company-details">
+            <h2>{{ selectedCompany.name }}</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <!-- Consumo Total -->
+              <div class="card">
+                <div class="card-header">
+                  <h2 class="card-title">Consumo Total</h2>
+                  <i class="icon">⚡</i>
+                </div>
+                <div class="card-content">
+                  <p class="text-2xl font-bold">{{ selectedCompany.total_consumption }} kWh</p>
+                  <p class="text-xs text-muted">+2% desde el último mes</p>
+                </div>
+              </div>
+
+              <!-- Costo Total -->
+              <div class="card">
+                <div class="card-header">
+                  <h2 class="card-title">Costo Total</h2>
+                  <i class="icon">$</i>
+                </div>
+                <div class="card-content">
+                  <p class="text-2xl font-bold">$ {{ selectedCompany.total_cost }}</p>
+                  <p class="text-xs text-muted">-4% desde el último mes</p>
+                </div>
+              </div>
+
+              <!-- Eficiencia -->
+              <div class="card">
+                <div class="card-header">
+                  <h2 class="card-title">Eficiencia</h2>
+                  <i class="icon">📈</i>
+                </div>
+                <div class="card-content">
+                  <p class="text-2xl font-bold">{{ selectedCompany.efficiency }}%</p>
+                  <p class="text-xs text-muted">+2% desde el último mes</p>
+                </div>
+              </div>
+
+              <!-- Alertas -->
+              <div class="card">
+                <div class="card-header">
+                  <h2 class="card-title">Alertas</h2>
+                  <i class="icon">⚠️</i>
+                </div>
+                <div class="card-content">
+                  <p class="text-2xl font-bold">{{ selectedCompany.alerts }}</p>
+                  <p class="text-xs text-muted">-1 desde ayer</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="consumption-history">
+              <h3>Consumption History</h3>
+              <ul>
+                <li *ngFor="let history of selectedCompany.consumption_history">
+                  <strong>Date:</strong> {{ history.date }} -
+                  <strong>Consumption:</strong> {{ history.consumption }} -
+                  <strong>Cost:</strong> {{ history.cost }}
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div *ngIf="selectedCompany" class="worker-selection">
+            <label for="worker-select">Select Worker:</label>
+            <mat-form-field appearance="fill">
+              <mat-label>Worker</mat-label>
+              <mat-select id="worker-select" (selectionChange)="selectWorker($event)">
+                <mat-option *ngFor="let worker of workers" [value]="worker.id_worker">
+                  {{ worker.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div *ngIf="selectedWorker" class="worker-details">
+            <h3>{{ selectedWorker.name }}</h3>
+            <p><strong>Occupation:</strong> {{ selectedWorker.occupation }}</p>
+            <p><strong>Phone:</strong> {{ selectedWorker.phone }}</p>
+            <p><strong>Email:</strong> {{ selectedWorker.correo }}</p>
+            <p><strong>Consumption:</strong> {{ selectedWorker.consumption }}</p>
+            <p><strong>Cost:</strong> {{ selectedWorker.cost }}</p>
+          </div>
+
+          <div *ngIf="loading" class="loading">
+            <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+          </div>
+
+          <div *ngIf="error" class="error">
+            <p>{{ error }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

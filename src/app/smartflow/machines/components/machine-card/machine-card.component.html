@@ -1,0 +1,8 @@
+<div class="machine-card">
+  <h2>{{ machine.name }}</h2>
+  <p><strong>Type:</strong> {{ machine.type }}</p>
+  <p><strong>Status:</strong> <span [class]="getStatusClass()">{{ machine.status }}</span></p>
+  <p><strong>Serial Number:</strong> {{ machine.serial_number }}</p>
+  <p><strong>Operational Hours:</strong> {{ machine.operational_hours }}</p>
+  <p><strong>Location:</strong> {{ machine.location }}</p>
+</div>

@@ -1,0 +1,36 @@
+.machine-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.machine-card h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.machine-card p {
+  margin: 8px 0;
+}
+
+.status-active {
+  color: green;
+  font-weight: bold;
+}
+
+.status-maintenance {
+  color: orange;
+  font-weight: bold;
+}
+
+.status-idle {
+  color: gray;
+  font-weight: bold;
+}
+
+.status-unknown {
+  color: red;
+  font-weight: bold;
+}
