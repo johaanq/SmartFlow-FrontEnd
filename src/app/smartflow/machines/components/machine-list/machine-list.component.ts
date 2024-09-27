@@ -11,6 +11,13 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./machine-list.component.css']
 })
 export class MachineListComponent implements OnInit, OnDestroy {
+
+  sidebarOpen = false;
+
+  toggleSidebar() {
+    this.sidebarOpen = !this.sidebarOpen;
+  }
+
   machines: Machine[] = [];
   loading: boolean = true;
   error: string | null = null;

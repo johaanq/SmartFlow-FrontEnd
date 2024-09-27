@@ -6,9 +6,9 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent {
-  @Output() menuToggle = new EventEmitter<void>();
+  @Output() toggleSidebar = new EventEmitter<void>();
 
-  onToggleMenu() {
-    this.menuToggle.emit();
+  onToggleSidebar() {
+    this.toggleSidebar.emit();
   }
 }

@@ -1,3 +1,17 @@
+.main-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px; /* Ajusta el ancho del sidebar según sea necesario */
+}
+
+.content {
+  flex: 1;
+  padding: 16px; /* Ajusta el padding según sea necesario */
+}
+
 .machine-list {
   padding: 20px;
 }

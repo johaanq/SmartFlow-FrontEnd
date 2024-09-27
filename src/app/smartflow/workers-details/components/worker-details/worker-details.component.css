@@ -1,0 +1,14 @@
+/* worker-details.component.css */
+.worker-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.worker-card {
+  width: 100%;
+  max-width: 400px;
+}
+

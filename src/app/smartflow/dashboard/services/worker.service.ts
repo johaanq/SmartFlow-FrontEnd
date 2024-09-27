@@ -16,4 +16,8 @@ export class WorkerService {
     return this.http.get<Worker[]>(`${this.apiUrl}?id_company=${id_company}`);
 
   }
+
+  getWorkerById(id_worker: number): Observable<Worker> {
+    return this.http.get<Worker>(`${this.apiUrl}/${id_worker}`);
+  }
 }

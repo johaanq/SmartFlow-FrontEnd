@@ -1,28 +1,35 @@
-<div class="machine-list">
-  <h1>Machine List</h1>
+<app-toolbar (toggleSidebar)="toggleSidebar()"></app-toolbar>
+<div class="main-layout">
+  <app-side-navigation-bar *ngIf="sidebarOpen" class="sidebar"></app-side-navigation-bar>
+  <div class="content">
+    <router-outlet></router-outlet>
+    <div class="machine-list">
+      <h1>Machine List</h1>
 
-  <div class="company-selector">
-    <label for="companySelect">Select Company: </label>
-    <select id="companySelect" [(ngModel)]="selectedCompany" (change)="onCompanyChange()">
-      <option *ngFor="let company of companies" [value]="company.id_company"> <!-- Asegúrate de usar el ID de la compañía -->
-        {{ company.name }} <!-- Muestra el nombre de la compañía -->
-      </option>
-    </select>
-  </div>
+      <div class="company-selector">
+        <label for="companySelect">Select Company: </label>
+        <select id="companySelect" [(ngModel)]="selectedCompany" (change)="onCompanyChange()">
+          <option *ngFor="let company of companies" [value]="company.id_company"> <!-- Asegúrate de usar el ID de la compañía -->
+            {{ company.name }} <!-- Muestra el nombre de la compañía -->
+          </option>
+        </select>
+      </div>
 
-  <div *ngIf="loading" class="loading">
-    <p>Loading machines...</p>
-  </div>
+      <div *ngIf="loading" class="loading">
+        <p>Loading machines...</p>
+      </div>
 
-  <div *ngIf="error" class="error">
-    <p>{{ error }}</p>
-  </div>
+      <div *ngIf="error" class="error">
+        <p>{{ error }}</p>
+      </div>
 
-  <div *ngIf="!loading && !error" class="machine-grid">
-    <app-machine-card *ngFor="let machine of machines" [machine]="machine"></app-machine-card>
-  </div>
+      <div *ngIf="!loading && !error" class="machine-grid">
+        <app-machine-card *ngFor="let machine of machines" [machine]="machine"></app-machine-card>
+      </div>
 
-  <div *ngIf="!loading && !error && machines.length === 0" class="no-machines">
-    <p>No machines found for the selected company.</p>
+      <div *ngIf="!loading && !error && machines.length === 0" class="no-machines">
+        <p>No machines found for the selected company.</p>
+      </div>
+    </div>
   </div>
 </div>

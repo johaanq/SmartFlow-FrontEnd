@@ -1,6 +1,7 @@
 export class Worker {
-  id_worker: number;
+  id: number;
   name: string;
+  age: number;
   occupation: string;
   phone: string;
   correo: string;
@@ -9,8 +10,9 @@ export class Worker {
   cost: number;
 
   constructor() {
-    this.id_worker = 0;
+    this.id = 0;
     this.name = '';
+    this.age = 0;
     this.occupation = '';
     this.phone = '';
     this.correo = '';

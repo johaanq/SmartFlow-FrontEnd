@@ -1,0 +1,45 @@
+<!-- worker-edit-details.component.html -->
+<div class="worker-edit-details">
+  <mat-card>
+    <mat-card-title class="title">Editar Perfil del Trabajador</mat-card-title>
+    <mat-card-content>
+      <form>
+        <!-- Nombre -->
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input matInput [(ngModel)]="worker.name" name="name" placeholder="Nombre del trabajador" />
+        </mat-form-field>
+
+        <!-- Edad -->
+        <mat-form-field appearance="fill">
+          <mat-label>Edad</mat-label>
+          <input matInput type="number" [(ngModel)]="worker.age" name="age" placeholder="Edad del trabajador" />
+        </mat-form-field>
+
+        <!-- Ocupación -->
+        <mat-form-field appearance="fill">
+          <mat-label>Ocupación</mat-label>
+          <input matInput [(ngModel)]="worker.occupation" name="occupation" placeholder="Ocupación del trabajador" />
+        </mat-form-field>
+
+        <!-- Teléfono -->
+        <mat-form-field appearance="fill">
+          <mat-label>Teléfono</mat-label>
+          <input matInput [(ngModel)]="worker.phone" name="phone" placeholder="Teléfono del trabajador" />
+        </mat-form-field>
+
+        <!-- Correo -->
+        <mat-form-field appearance="fill">
+          <mat-label>Correo</mat-label>
+          <input matInput [(ngModel)]="worker.correo" name="correo" placeholder="Correo del trabajador" />
+        </mat-form-field>
+
+        <!-- Botones -->
+        <div class="button-group">
+          <button mat-raised-button color="primary">Guardar</button>
+          <button mat-raised-button color="warn">Cancelar</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

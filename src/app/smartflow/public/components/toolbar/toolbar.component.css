@@ -1,5 +1,4 @@
 .toolbar {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #3b82f6;
@@ -7,9 +6,16 @@
   padding: 1rem;
 }
 
-.toolbar-title {
+.logo {
+  display: flex;
+  align-items: center;
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 700;
+}
+
+.logo img {
+  width: 40px;
+  margin-right: 10px;
 }
 
 .menu-button {

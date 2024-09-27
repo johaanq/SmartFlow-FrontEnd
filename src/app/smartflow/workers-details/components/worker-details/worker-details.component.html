@@ -1,0 +1,33 @@
+<!-- worker-details.component.html -->
+<div class="company-selection">
+  <label for="company-select">Select Company:</label>
+  <mat-form-field appearance="fill">
+    <mat-label>Company</mat-label>
+    <mat-select id="company-select" (selectionChange)="selectCompany($event)">
+      <mat-option *ngFor="let company of companies" [value]="company.id_company">
+        {{ company.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div class="worker-details-container">
+  <mat-card *ngFor="let worker of workers" class="worker-card">
+    <mat-card-header>
+      <mat-card-title>{{ worker.name }}</mat-card-title>
+      <mat-card-subtitle>{{ worker.occupation }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Edad:</strong> {{ worker.age }}</p>
+      <p><strong>Teléfono:</strong> {{ worker.phone }}</p>
+      <p><strong>Correo:</strong> {{ worker.correo }}</p>
+      <p><strong>Consumo:</strong> {{ worker.consumption }}</p>
+      <p><strong>Costo:</strong> {{ worker.cost }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="editWorker(worker.id)">Editar Perfil</button>
+    </mat-card-actions>
+  </mat-card>
+
+
+</div>

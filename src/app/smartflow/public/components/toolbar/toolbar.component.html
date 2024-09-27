@@ -1,8 +1,9 @@
-<header class="toolbar">
-  <a class="toolbar-title">SmartFlow</a>
-  <button class="menu-button" (click)="onToggleMenu()">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
+<mat-toolbar class="toolbar">
+  <div class="logo">
+    <img src="smartflow-logo-white.png" alt="SmartFlow Logo">
+    <span>SmartFlow</span>
+  </div>
+  <button class="menu-button" mat-icon-button (click)="onToggleSidebar()">
+    <mat-icon>menu</mat-icon>
   </button>
-</header>
+</mat-toolbar>

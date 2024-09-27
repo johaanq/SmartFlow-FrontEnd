@@ -1,4 +1,4 @@
 ﻿export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000'  // Fake API URL
+  apiUrl: 'https://my-json-server.typicode.com/johaanq/smartflow-fake-api'  // Fake API URL
 };

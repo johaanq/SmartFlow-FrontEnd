@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { CompanyService } from '../../services/company.service';
-import { WorkerService } from '../../services/worker.service';
-import { Company } from '../../models/company.entity';
-import { Worker } from '../../models/worker.entity';
+import { CompanyService } from '../../../dashboard/services/company.service';
+import { WorkerService } from '../../../dashboard/services/worker.service';
+import { Company } from '../../../dashboard/models/company.entity';
+import { Worker } from '../../../dashboard/models/worker.entity';
 import { MatSelectChange } from '@angular/material/select';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-worker-details',
+  templateUrl: './worker-details.component.html',
+  styleUrls: ['./worker-details.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class WorkerDetailsComponent implements OnInit {
   sidebarOpen = false;
 
   toggleSidebar() {
@@ -26,9 +27,13 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private companyService: CompanyService,
-    private workerService: WorkerService
+    private workerService: WorkerService,
+    private router: Router
   ) {}
 
+  editWorker(workerId: number) {
+    this.router.navigate(['/edit-worker', workerId]);
+  }
   ngOnInit(): void {
     this.loadCompanies();
   }
